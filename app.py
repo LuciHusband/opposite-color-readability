@@ -2,6 +2,10 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return 'Welcome to the Color API!'
+
 @app.route('/changeTextColor', methods=['POST'])
 def change_text_color():
     background_color = request.json.get('backgroundColor')
@@ -22,7 +26,7 @@ def calculate_text_color(background_color):
     comp_green = 255 - green
     comp_blue = 255 - blue
 
-    complementary_hex = '#{:02x}{:02x}{:02x}' % (comp_red, comp_green, comp_blue)
+    complementary_hex = '#{:02x}{:02x}{:02x}'.format(comp_red, comp_green, comp_blue)
 
     return complementary_hex
 
