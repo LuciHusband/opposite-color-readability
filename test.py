@@ -5,7 +5,7 @@ url = 'http://localhost:5000/changeTextColor'
 
 # Request payload
 payload = {
-    'backgroundColor': '#ff1254'
+    'backgroundColor': '#ff6956' # Change this to test different colors
 }
 
 # Make the POST request
